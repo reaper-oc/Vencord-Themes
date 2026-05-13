@@ -1,30 +1,166 @@
-/* panels glass effect */
-.visual-refresh .panels_c48ade,
-.visual-refresh .container__2637a,
-.visual-refresh .membersWrap_cbd271 {
-  background: rgba(255, 227, 238, 0.65) !important;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 158, 203, 0.25);
+
+
+.appMount_fae9dd {
+  background: linear-gradient(135deg, #fff1f4, #ffe3d6) !important;
 }
 
-/* chat input */
-.channelTextArea_f75fb0 {
-  background: rgba(255, 227, 238, 0.7) !important;
-  border: 1px solid rgba(255, 158, 203, 0.25);
+/* main app grid */
+.app__160d8 {
+  background: transparent !important;
 }
 
-/* selected channel */
+.sidebar_c48ade,
+.container__2637a,
+.membersWrap_cbd271,
+.panels_c48ade {
+  background: rgba(255, 224, 210, 0.55) !important;
+  backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(255, 182, 193, 0.25);
+}
+
+/* chat area */
+.chatContent_f75fb0 {
+  background: rgba(255, 245, 240, 0.35) !important;
+}
+
+/* top bar */
+.title_f75fb0 {
+  background: rgba(255, 224, 210, 0.45) !important;
+  backdrop-filter: blur(10px);
+}
+
+.scrollerContent__36d07 {
+  background: transparent !important;
+}
+
+.messageContent__21e69 {
+  color: #3a2a30;
+  text-shadow: 0 0 2px rgba(255, 182, 193, 0.15);
+}
+
+/* message hover softness */
+.message__5126c:hover {
+  background: rgba(255, 182, 193, 0.08) !important;
+}
+
+.containerDefault_c69b6d {
+  margin: 2px 6px;
+}
+
 .modeSelected__2ea32 .link__2ea32 {
-  background: rgba(255, 158, 203, 0.22) !important;
-  border-left: 3px solid var(--main-color);
+  background: rgba(255, 182, 193, 0.25) !important;
+  border-left: 3px solid #ffb6c1;
+  border-radius: 8px;
 }
 
-/* buttons */
-.lookFilled__201d5.colorBrand__201d5 {
-  background: var(--main-color) !important;
+/* unread indicator */
+.unread__48cf4 {
+  background: #ffb6c1 !important;
+}
+
+.mentioned__5126c {
+  background: rgba(255, 183, 156, 0.18) !important;
+  border-left: 3px solid #ffb07c !important;
+}
+
+.mentioned__5126c:hover {
+  background: rgba(255, 183, 156, 0.28) !important;
+}
+
+/* @mentions */
+.wrapper_f61d60 {
+  background: rgba(255, 183, 156, 0.15) !important;
   color: #3a2a30 !important;
+  border-radius: 10px;
+}
+
+.wrapper_f61d60:hover {
+  background: rgba(255, 183, 156, 0.25) !important;
+}
+
+/* =========================
+   AVATARS (SOFT KAWAII ROUNDING)
+========================= */
+
+img[class*="avatar"],
+svg[mask*="avatar"] {
+  border-radius: 42% !important;
+  border: 2px solid rgba(255, 182, 193, 0.35);
+}
+
+.lookFilled__201d5.colorBrand__201d5 {
+  background: #ffb6c1 !important;
+  color: #3a2a30 !important;
+  border-radius: 12px;
 }
 
 .lookFilled__201d5.colorBrand__201d5:hover {
-  background: var(--hover-color) !important;
+  background: #ffc6cf !important;
+}
+
+.channelTextArea_f75fb0 {
+  background: rgba(255, 235, 230, 0.65) !important;
+  border: 1px solid rgba(255, 182, 193, 0.25);
+  border-radius: 12px;
+}
+
+/* =========================
+   ROLE PILLS (PASTEL CATS)
+========================= */
+
+.role_dfa8b6 {
+  background: rgba(255, 182, 193, 0.18) !important;
+  border: 1px solid rgba(255, 182, 193, 0.25) !important;
+  border-radius: 999px;
+}
+
+.containerDefault_c69b6d::before {
+  content: "";
+  display: block;
+  height: 10px;
+  margin: 6px 10px;
+  opacity: 0.35;
+
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Furry_blue_paw_vector_logo.svg/960px-Furry_blue_paw_vector_logo.svg.png")
+    no-repeat center;
+  background-size: 14px;
+}
+
+[href="/channels/@me"] {
+  position: relative;
+}
+
+[href="/channels/@me"] svg {
+  opacity: 0 !important;
+}
+
+[href="/channels/@me"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  width: 18px;
+  height: 18px;
+
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Furry_blue_paw_vector_logo.svg/960px-Furry_blue_paw_vector_logo.svg.png")
+    no-repeat center;
+  background-size: contain;
+
+  opacity: 0.8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 182, 193, 0.45) !important;
+  border-radius: 10px;
+}
+
+::selection {
+  background: rgba(255, 182, 193, 0.35);
+  color: #3a2a30;
+}
+
+button[aria-label="Send a gift"],
+button[aria-label="Apps"] {
+  display: none;
 }
