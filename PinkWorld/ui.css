@@ -1,5 +1,3 @@
-
-
 .appMount_fae9dd {
   background: linear-gradient(135deg, #fff1f4, #ffe3d6) !important;
 }
@@ -14,7 +12,7 @@
 .membersWrap_cbd271,
 .panels_c48ade {
   background: rgba(255, 224, 210, 0.55) !important;
-  backdrop-filter: blur(14px);
+  /* REMOVED backdrop-filter - causes glitches */
   border-right: 1px solid rgba(255, 182, 193, 0.25);
 }
 
@@ -26,7 +24,7 @@
 /* top bar */
 .title_f75fb0 {
   background: rgba(255, 224, 210, 0.45) !important;
-  backdrop-filter: blur(10px);
+  /* REMOVED backdrop-filter */
 }
 
 .scrollerContent__36d07 {
@@ -35,7 +33,7 @@
 
 .messageContent__21e69 {
   color: #3a2a30;
-  text-shadow: 0 0 2px rgba(255, 182, 193, 0.15);
+  /* REMOVED text-shadow - was causing blurriness */
 }
 
 /* message hover softness */
@@ -58,30 +56,33 @@
   background: #ffb6c1 !important;
 }
 
+/* =========================
+   FIXED: Consolidated mention styles
+   (use pink, not orange)
+========================= */
 .mentioned__5126c {
-  background: rgba(255, 183, 156, 0.18) !important;
-  border-left: 3px solid #ffb07c !important;
+  background: rgba(255, 158, 203, 0.18) !important;
+  border-left: 3px solid #ff9ecb !important;
 }
 
 .mentioned__5126c:hover {
-  background: rgba(255, 183, 156, 0.28) !important;
+  background: rgba(255, 158, 203, 0.25) !important;
 }
 
 /* @mentions */
 .wrapper_f61d60 {
-  background: rgba(255, 183, 156, 0.15) !important;
+  background: rgba(255, 158, 203, 0.15) !important;
   color: #3a2a30 !important;
   border-radius: 10px;
 }
 
 .wrapper_f61d60:hover {
-  background: rgba(255, 183, 156, 0.25) !important;
+  background: rgba(255, 158, 203, 0.25) !important;
 }
 
 /* =========================
    AVATARS (SOFT KAWAII ROUNDING)
 ========================= */
-
 img[class*="avatar"],
 svg[mask*="avatar"] {
   border-radius: 42% !important;
@@ -107,49 +108,37 @@ svg[mask*="avatar"] {
 /* =========================
    ROLE PILLS (PASTEL CATS)
 ========================= */
-
 .role_dfa8b6 {
   background: rgba(255, 182, 193, 0.18) !important;
   border: 1px solid rgba(255, 182, 193, 0.25) !important;
   border-radius: 999px;
 }
 
+/* =========================
+   FIXED: Paw icon - ONLY on server list header, not every channel
+========================= */
+/* Remove the broken per-channel paw */
 .containerDefault_c69b6d::before {
-  content: "";
-  display: block;
-  height: 10px;
-  margin: 6px 10px;
-  opacity: 0.35;
-
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Furry_blue_paw_vector_logo.svg/960px-Furry_blue_paw_vector_logo.svg.png")
-    no-repeat center;
-  background-size: 14px;
+  display: none !important;
 }
 
-[href="/channels/@me"] {
-  position: relative;
+/* Optional: Add paw somewhere subtle, like the top of server list */
+.wrapper__3ed31:first-child .containerDefault_c69b6d:first-child::before {
+  display: none; /* kept disabled by default - re-enable only if you want */
 }
 
+/* =========================
+   FIXED: @me DM button - restore original icon
+========================= */
 [href="/channels/@me"] svg {
-  opacity: 0 !important;
+  opacity: 1 !important; /* RESTORED - was 0 */
 }
 
 [href="/channels/@me"]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-
-  width: 18px;
-  height: 18px;
-
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Furry_blue_paw_vector_logo.svg/960px-Furry_blue_paw_vector_logo.svg.png")
-    no-repeat center;
-  background-size: contain;
-
-  opacity: 0.8;
+  display: none !important; /* REMOVED the replacement paw */
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 182, 193, 0.45) !important;
   border-radius: 10px;
@@ -160,6 +149,7 @@ svg[mask*="avatar"] {
   color: #3a2a30;
 }
 
+/* Hide gift/app buttons (optional, kept from original) */
 button[aria-label="Send a gift"],
 button[aria-label="Apps"] {
   display: none;
