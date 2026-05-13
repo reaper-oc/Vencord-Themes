@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
+
+:root {
+
+  /* pink core palette */
+  --main-color: #ff9ecb;
+  --hover-color: #ffb6d9;
+
+  --bg-1: #fff0f6;
+  --bg-2: #ffffff;
+  --card: #ffe3ee;
+
+  --text-main: #3a2a30;
+  --text-muted: #7a5a66;
+
+  --success-color: #b6f7c7;
+  --danger-color: #ff6b8b;
+
+  --font: "Quicksand", "gg sans", sans-serif;
+}
+
+body {
+  font-family: var(--font) !important;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2)) !important;
+}
