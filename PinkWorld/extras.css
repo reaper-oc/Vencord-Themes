@@ -1,0 +1,30 @@
+/* avatars = soft cat-like rounding */
+img[class*="avatar"],
+svg[mask*="avatar"] {
+  border-radius: 40% !important;
+  border: 2px solid rgba(255, 158, 203, 0.35);
+}
+
+/* role pills */
+.role_dfa8b6 {
+  background: rgba(255, 158, 203, 0.15) !important;
+  border: 1px solid rgba(255, 158, 203, 0.25) !important;
+  border-radius: 999px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 158, 203, 0.4) !important;
+}
+
+/* selection */
+::selection {
+  background: rgba(255, 158, 203, 0.35);
+  color: #3a2a30;
+}
+
+/* cleanup */
+button[aria-label="Send a gift"],
+button[aria-label="Apps"] {
+  display: none;
+}
